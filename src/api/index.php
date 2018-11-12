@@ -24,13 +24,13 @@ if( !isset($user) ){
     }
 
     if( isset($_POST['in_grecaptcha']) ){
-        $recaptcha = json_decode(sendGet('https://www.google.com/recaptcha/api/siteverify?secret=6LdWE2wUAAAAADTIsfZ7xZHgZ8_HGTeT3sB7FHmi&response='.$_POST['in_grecaptcha'].'&remoteip='.$_SERVER['HTTP_X_REAL_IP']), true);
+        $recaptcha = json_decode(sendGet('https://www.google.com/recaptcha/api/siteverify?secret='.$gma_key.'&response='.$_POST['in_grecaptcha'].'&remoteip='.$_SERVER['HTTP_X_REAL_IP']), true);
         file_put_contents('log.txt', json_encode($recaptcha).PHP_EOL, FILE_APPEND | LOCK_EX);
 
         if( $recaptcha['success'] == 1 ) $grecaptcha_success = true;
         else $grecaptcha_success = false;
     }elseif( isset($_POST['grecaptcha']) ){
-        $recaptcha = json_decode(sendGet('https://www.google.com/recaptcha/api/siteverify?secret=6LfO92oUAAAAAI9FEyLhdwoOlHpzwo4UIorwu6kN&response='.$_POST['grecaptcha'].'&remoteip='.$_SERVER['HTTP_X_REAL_IP']), true);
+        $recaptcha = json_decode(sendGet('https://www.google.com/recaptcha/api/siteverify?secret='.$gma_key.'&response='.$_POST['grecaptcha'].'&remoteip='.$_SERVER['HTTP_X_REAL_IP']), true);
         file_put_contents('log.txt', json_encode($recaptcha).PHP_EOL, FILE_APPEND | LOCK_EX);
 
         if( $recaptcha['success'] == 1 ){

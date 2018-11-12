@@ -1,6 +1,6 @@
 <?
 
-$recaptcha = json_decode(sendGet('https://www.google.com/recaptcha/api/siteverify?secret=6LfO92oUAAAAAI9FEyLhdwoOlHpzwo4UIorwu6kN&response='.$_POST['token'].'&remoteip='.$_SERVER['HTTP_X_REAL_IP']), true);
+$recaptcha = json_decode(sendGet('https://www.google.com/recaptcha/api/siteverify?secret='.$gma_key.'&response='.$_POST['token'].'&remoteip='.$_SERVER['HTTP_X_REAL_IP']), true);
 
 if( $recaptcha['success'] == 1 ){
 
