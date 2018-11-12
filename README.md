@@ -1,3 +1,3 @@
 # Owner
-t.me/Owner
-ты пидор
+t.me/OwnerBot
+#ты пидор
