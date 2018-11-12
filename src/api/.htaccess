@@ -1,0 +1,6 @@
+Allow from all
+
+RewriteEngine On
+
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^(.*)?$ index.php?method=$1&%1 [L]
