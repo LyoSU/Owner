@@ -1,3 +1,5 @@
 # Owner
 t.me/OwnerBot
-#ты пидор
+
+
+ты пидор
